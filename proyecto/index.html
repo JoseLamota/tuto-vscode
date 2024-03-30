@@ -1,38 +1,43 @@
-HTML
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Figuras Geométricas</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid black;
-      padding: 5px;
-      text-align: left;
-    }
-    th {
-      background-color: #eee;
-    }
-  </style>
-</head>
-<body>
-  <h1>Figuras Geométricas</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Tipo</th>
-        <th>Coordenadas (x, y)</th>
-        <th>Área</th>
-        <th>Perímetro</th>
-      </tr>
-    </thead>
-    <tbody id="figures-table"></tbody>
-  </table>
-  <script>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio de cálculo de figuras geométricas</title>
+  </head>
+  <body>
+    <h1>Cálculo de las figuras geométricas</h1>
+    <button id="calcular">Calcular el área y perímetro</button>
+    <div id="resultado"></div>
+
+    <script>
+      // Agrega el código JavaScript del archivo
+
+      // ... (Código JavaScript sin cambios)
+
+      // Llamamos a la función para calcular y mostrar los resultados
+      document.getElementById("calcular").addEventListener("click", () => {
+        const resultadoFiguras = document.createElement("p");
+
+        resultadoFiguras.innerHTML = `
+          <strong>Área total: </strong>${totalArea} -
+          <strong>Perímetro total: </strong>${totalPerimetro}
+        `;
+
+        // Limpiamos el div 'resultado'
+        while (document.getElementById("resultado").firstChild) {
+          document.getElementById("resultado").firstChild.remove();
+        }
+
+        // Agregamos el resultado de las figuras
+        document.getElementById("resultado").appendChild(resultadoFiguras);
+      });
+
+      // Llamamos a la función mostrarFiguras()
+      mostrarFiguras(figuras);
+
+      // Mostramos los totales si no queremos usar el botón
+      // mostrarTotales(figuras);
+    </script>
+  </body>
+</html>
